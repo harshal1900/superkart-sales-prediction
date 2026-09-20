@@ -39,11 +39,8 @@ with tab1:
     with col3:
         product_id_char = st.selectbox("Product Category Prefix", ["FD", "DR", "NC"])
         store_age_years = st.slider("Store Operational Age (Years)", min_value=1, max_value=40, value=15)
-        product_type_category = st.selectbox("Product Type Category", [
-            "Baking Goods", "Breads", "Breakfast", "Canned", "Dairy", "Frozen Foods",
-            "Fruits and Vegetables", "Hard Drinks", "Health and Hygiene", "Household",
-            "Meat", "Others", "Seafood", "Snack Foods", "Soft Drinks", "Starchy Foods"
-        ])
+        product_type_category = st.selectbox("Product Type Category (Perishable / Non-Perishable)",
+            ["Perishables", "Non Perishables"])
 
     if st.button("Predict Sales Revenue", type="primary"):
         # Construct input payload matching the encoded training features
