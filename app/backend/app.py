@@ -6,7 +6,7 @@ from flask import Flask, request, jsonify
 # Initialize Flask application
 superkart_api = Flask(__name__)
 
-# Load serialized machine learning model locally within the container
+# Load serialized machine learning model (full preprocessing + regressor pipeline)
 MODEL_PATH = "superkart_model.joblib"
 model = joblib.load(MODEL_PATH)
 
