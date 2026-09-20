@@ -2,10 +2,13 @@ FROM python:3.10-slim
 
 WORKDIR /app
 
+# Copy requirements and install dependencies
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
+# Copy the Flask application and trained model into container
+COPY app.py .
+COPY superkart_model.joblib .
 
 EXPOSE 7860
 
